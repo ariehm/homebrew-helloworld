@@ -5,21 +5,21 @@
 class Hw < Formula
   desc "Friendly software that offers a friendly greeting.  Friendlyly."
   homepage "https://github.com/ariehm/helloworld"
-  version "0.0.8"
+  version "0.0.9"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/ariehm/helloworld/releases/download/v0.0.8/helloworld_Darwin_arm64.tar.gz"
-      sha256 "69710705229cfdf3a0d0eec7621daa78f37b064f567020d8d2c178beac78c39f"
+    if Hardware::CPU.intel?
+      url "https://github.com/ariehm/helloworld/releases/download/v0.0.9/helloworld_Darwin_x86_64.tar.gz"
+      sha256 "d3bc7b9278c54b02b881d227beb7579a408b74c9d4f49cfcff8436b0e59a3eba"
 
       def install
         bin.install "hw"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ariehm/helloworld/releases/download/v0.0.8/helloworld_Darwin_x86_64.tar.gz"
-      sha256 "030bc8e52d1424f3b74e2375c0b42dda2b29ab6fd511ecc76df81d3f8c683d9c"
+    if Hardware::CPU.arm?
+      url "https://github.com/ariehm/helloworld/releases/download/v0.0.9/helloworld_Darwin_arm64.tar.gz"
+      sha256 "df40dfd68b844bb6dd47d88d8af07bd893746e40d3420fc215985e56a39c9ce9"
 
       def install
         bin.install "hw"
@@ -28,17 +28,17 @@ class Hw < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/ariehm/helloworld/releases/download/v0.0.8/helloworld_Linux_x86_64.tar.gz"
-      sha256 "95e3e47c3374ee4f168670c9739ad2b8ead451c2744f4ce4a16e2b884ec12a5d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ariehm/helloworld/releases/download/v0.0.9/helloworld_Linux_arm64.tar.gz"
+      sha256 "e8b6ef104981cb5170240d228bc27356da037343122e8c93c1fb5d0f4e98a49e"
 
       def install
         bin.install "hw"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ariehm/helloworld/releases/download/v0.0.8/helloworld_Linux_arm64.tar.gz"
-      sha256 "39e683238a1e8c558a349d29683fbc59f30975084208125e456e2f89570815b2"
+    if Hardware::CPU.intel?
+      url "https://github.com/ariehm/helloworld/releases/download/v0.0.9/helloworld_Linux_x86_64.tar.gz"
+      sha256 "3af93ad711ec190d7b17ad9ee5fe489bb8c69698434207bf274d502ac318273e"
 
       def install
         bin.install "hw"
