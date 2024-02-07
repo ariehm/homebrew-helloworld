@@ -5,21 +5,21 @@
 class Hw < Formula
   desc "Friendly software that offers a friendly greeting"
   homepage "https://github.com/ariehm/helloworld"
-  version "0.0.10"
+  version "0.0.11"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/ariehm/helloworld/releases/download/v0.0.10/helloworld_Darwin_arm64.tar.gz"
-      sha256 "30f93c0b82d9bc45ada1cd699f49ae96acf3ac1c5eb5ffc594b8698abbefd075"
+    if Hardware::CPU.intel?
+      url "https://github.com/ariehm/helloworld/releases/download/v0.0.11/helloworld_Darwin_x86_64.tar.gz"
+      sha256 "0bf871a0db90c9ec4862f019e9d2a8ef933431fa74af615c4892105a7f750007"
 
       def install
         bin.install "hw"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/ariehm/helloworld/releases/download/v0.0.10/helloworld_Darwin_x86_64.tar.gz"
-      sha256 "24d1d1fb64409c82c88a88cd52bc27a95381284a8ad4b7c130c373a92f0d2bb6"
+    if Hardware::CPU.arm?
+      url "https://github.com/ariehm/helloworld/releases/download/v0.0.11/helloworld_Darwin_arm64.tar.gz"
+      sha256 "596da071847969205a490287bf012ffa4079de57fa10b755508a095c9dbd4e18"
 
       def install
         bin.install "hw"
@@ -29,16 +29,16 @@ class Hw < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ariehm/helloworld/releases/download/v0.0.10/helloworld_Linux_arm64.tar.gz"
-      sha256 "51bb56e3a302a2a09887ef4715605248ed94a7f527e507882639989c56744a87"
+      url "https://github.com/ariehm/helloworld/releases/download/v0.0.11/helloworld_Linux_arm64.tar.gz"
+      sha256 "6f4653ab8ecfc49894b7794770bd25e0cbcdf3b391ea43fd3edf977820fce8fd"
 
       def install
         bin.install "hw"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ariehm/helloworld/releases/download/v0.0.10/helloworld_Linux_x86_64.tar.gz"
-      sha256 "09c381879827cfd1c0cb57c981fe6b04aec92ee508924d8b4c6ae08e42ccabdc"
+      url "https://github.com/ariehm/helloworld/releases/download/v0.0.11/helloworld_Linux_x86_64.tar.gz"
+      sha256 "3c5a027f191807255157de64fe02ff5e0d60a15bf8735f0887b4d9b9a9a01667"
 
       def install
         bin.install "hw"
